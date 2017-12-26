@@ -1,0 +1,1 @@
+First of all you must run mongodb server then run mongo. After that you can run the script by following command: load("<path_to_script/generate_hotel_db.js>"). After these actions you get database that named hotel_db with the filled documents.
