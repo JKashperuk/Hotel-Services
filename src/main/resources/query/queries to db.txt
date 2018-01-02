@@ -1,0 +1,209 @@
+
+For sorting rooms in the hotel by price ascending you need to copy hotel_id to the next query:
+db.room.find({"hotel_id" : ObjectId("5a4158f4fc13ae3961000285")}).sort({price: 1})
+
+
+//-----------Query for Andrew's trip-----------
+//-----------booking #1-----------
+Find IDs of addresses that located in Kiev, Ukraine:
+db.address.find({country: "Ukraine", city: "Kiev"})
+
+Find hotel that located in Kiev.
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a390bd99f38a70dca6c117a")})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a36aceee4b55705b265e3")})
+
+Find reviews of the hotel:
+You need to copy some hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a36aceee4b55705b265e3")})
+
+//-----------booking #2-----------
+Find IDs of addresses that located in Cairo, Egypt:
+db.address.find({country: "Egypt", city: "Cairo"})
+
+Find hotel that located in Cairo with aditional services "Bar", "Air conditioning".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a390cca9f38a70dca6c117b"), aditional_services: {$all: ["Bar", "Air conditioning"]}})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a36aceee4b55705b265e4")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a36aceee4b55705b265e4")})
+
+//-----------booking #3-----------
+Find IDs of addresses that located in Odessa, Ukraine:
+db.address.find({country: "Ukraine", city: "Odessa"})
+
+Find hotel that located in Odessa with aditional service "Sea side view".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a390d3e9f38a70dca6c117c"), aditional_services: {$all: ["Sea side view"]}})
+
+Find rooms of the hotel:
+You need to copy some hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a36aceee4b55705b265e5")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a36aceee4b55705b265e5")})
+
+
+
+
+//-----------Query for Alexander's trip-----------
+//-----------booking #1-----------
+Find IDs of addresses that located in Kiev, Ukraine:
+db.address.find({country: "Ukraine", city: "Kiev"})
+
+Find hotel that located in Kiev with aditional services "WiFi", "Air conditioning".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a390bd99f38a70dca6c117a")})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a41eba7f3cd0f266db9cd")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a41eba7f3cd0f266db9cd")})
+
+//-----------booking #2-----------
+Find IDs of addresses that located in San Francisco, USA:
+db.address.find({country: "USA", city: "San Francisco"})
+
+Find hotel that located in San Francisco with aditional services "Bar", "Air conditioning".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a3ec99b8d7b8bc0fae1a7"), aditional_services: {$all: ["Swimming Pool", "Spa"]}})
+
+Find rooms of sotheme hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a41eba7f3cd0f266db9ce")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a41eba7f3cd0f266db9ce")}))
+
+//-----------booking #3-----------
+Find IDs of addresses that located in Boston, USA:
+db.address.find({country: "USA", city: "Boston"})
+
+Find hotel that located in Boston with aditional services "WiFi", "Bar".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a3ec99b8d7b8bc0fae1a8"), aditional_services: {$all: ["WiFi", "Bar"]}})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a41eba7f3cd0f266db9cf")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a41eba7f3cd0f266db9cf")})
+
+
+
+
+//-----------Query for Dmytro's trip-----------
+//-----------booking #1-----------
+Find IDs of addresses that located in Lviv, Ukraine:
+db.address.find({country: "Ukraine", city: "Lviv"})
+
+Find hotel that located in Lviv.
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a4d9a43fd40c93518e5ee")})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a55feec06144f97c1fcc2")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a55feec06144f97c1fcc2")})
+
+//-----------booking #2-----------
+Find IDs of addresses that located in Krakow, Poland:
+db.address.find({country: "Poland", city: "Krakow"})
+
+Find hotel that located in Krakow with aditional services "Bar", "Spa".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a3ec99b8d7b8bc0fae1a7"), aditional_services: {$all: ["Bar", "Spa"]}})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a55feec06144f97c1fcc3")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a55feec06144f97c1fcc3")}))
+
+//-----------booking #3-----------
+Find IDs of addresses that located in Paris, France:
+db.address.find({country: "France", city: "Paris"})
+
+Find hotel that located in Paris with aditional service "Bar".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a4d9a43fd40c93518e5f0"), aditional_services: {$all: ["Bar"]}})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a55feec06144f97c1fcc4")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a55feec06144f97c1fcc4")})
+
+
+
+
+//-----------Query for Yevhenii's trip-----------
+//-----------booking #1-----------
+Find IDs of addresses that located in Kiev, Ukraine:
+db.address.find({country: "Ukraine", city: "Kiev"})
+
+Find hotel that located in Kiev.
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a5ce3c3015944b14b5deb")})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a5ebcc611633654863e03")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a5ebcc611633654863e03")})
+
+//-----------booking #2-----------
+Find IDs of addresses that located in Sydney, Australia:
+db.address.find({country: "Australia", city: "Sydney"})
+
+Find hotel that located in Sydney with aditional services "Bar", "Air conditioning".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a5ce3c3015944b14b5dec"), aditional_services: {$all: ["Bar", "Air conditioning"]}})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a5ebcc611633654863e04")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a5ebcc611633654863e04")}))
+
+//-----------booking #3-----------
+Find IDs of addresses that located in Los Angeles, USA:
+db.address.find({country: "USA", city: "Los Angeles"})
+
+Find hotel that located in Los Angeles with aditional service "Bar".
+You need to copy the address_id to the next query:
+db.hotel.find({address_id: ObjectId("5a3a5ce3c3015944b14b5ded"), aditional_services: {$all: ["Bar"]}})
+
+Find rooms of the hotel:
+You need to copy the hotel_id to the next query:
+db.room.find({hotel_id: ObjectId("5a3a5ebcc611633654863e05")})
+
+Find reviews of the hotel:
+You need to copy the hotel_id to the next query:
+db.review.find({hotel_id: ObjectId("5a3a5ebcc611633654863e05")})
