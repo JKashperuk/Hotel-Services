@@ -1,12 +1,14 @@
 First of all you must go to http://www.mockaroo.com/ and register there. Then you create new schema. The first schema is 'address'. There are such filds, its types and options:
 
-| Field Name | 	     Type       | Options |
-| ---------- |------------------|---------|
-| _id	     | MongoDB ObjectID | none	  |
-| country    | Country		| none	  |
-| city       | City		| none    |
-| street     | Street Name	| none	  |
-| building   | Street Number	| none    |
+| Field Name     | 	     Type   | Options |
+|----------------|------------------|---------|
+| _id	     	 | MongoDB ObjectID | none	  |
+| country    	 | Country	    | none	  |
+| city       	 | City		    | none    |
+| street    	 | Street Name	    | none	  |
+| building  	 | Street Number    | none    |
+| created_date   | Date	   	    | 12/26/2016 to 06/26/2017 in mongoDB ISO |
+| updated_date   | Date	            | 06/26/2017 to 12/26/2017 in mongoDB ISO |
 
 After that you can choose amount of rows and set JSON format. Then you need to click on the button 'Download Data'.
 Further you must create new java project and copy json-file to project folder. Then you need to run following script:
@@ -26,7 +28,9 @@ public static void main(String[] args) throws IOException {
 		String everything = sb.toString();
 		String updated = everything.replace("{\"$oid\":", "ObjectId(");
 		String updated2 = updated.replace("\"},\"", "\"),\"");
-		System.out.println("db.address.insertMany(" + updated2 + ")");
+		String updated3 = updated2.replace("{\"$date\":", "new Date(");
+		String updated4 = updated3.replace("}}", ")}");
+		System.out.println("db.address.insertMany(" + updated4 + ")");
 	} finally {
 		br.close();
 	}
@@ -46,6 +50,8 @@ The next schema is 'hotel'. There are such filds, its types and options:
 | name                    | Fake Company Name | none |
 | phone    	          | Phone	      | format: ###-###-#### |
 | aditional_service[8-10] | Custom List	      | Parking, Swimming Pool, WiFi, Outdoor Pool, Non-smoking Rooms, Pet Friendly, Family Rooms, Bar, Airport Shuttle, TV, Air conditioning, Phone, Elevator, Spa, Laundry, 24-Hour Front Desk, Restaurant, Fitness Center, Room Service, Facilities for Disabled Guests Distribution Type: random |
+| created_date 		  | Date	      | 12/26/2016 to 06/26/2017 in mongoDB ISO |
+| updated_date  	  | Date	      | 06/26/2017 to 12/26/2017 in mongoDB ISO |
 
 After that you can choose amount of rows and set JSON format. Then you need to click on the button 'Download Data'.
 Further you must copy json-file to java project folder. Then you need to run following script:
@@ -67,7 +73,9 @@ public static void main(String[] args) throws IOException {
 		String updated2 = updated.replace("address_id\":\"", "address_id\":ObjectId(\"");
 		String updated3 = updated2.replace("\",\"name", "\"),\"name");
 		String updated4 = updated3.replace("\"},\"", "\"),\"");
-		System.out.println("db.hotel.insertMany(" + updated4 + ")");
+		String updated5 = updated4.replace("{\"$date\":", "new Date(");
+		String updated6 = updated5.replace("}}", ")}");
+		System.out.println("db.hotel.insertMany(" + updated6 + ")");
 	} finally {
 		br.close();
 	}
@@ -88,6 +96,8 @@ The next schema is 'room'. There are such filds, its types and options:
 | guest_amount           | Number	     | min: 1, max: 4 |
 | price		         | Number	     | min: 100, max: 10000 |
 | aditional_service[5-7] | Custom List	     | WiFi, Outdoor Pool, Non-smoking Rooms, Pet Friendly, Family Rooms, Bar, TV, Air conditioning, Phone, Room Service, Facilities for Disabled Guests; Distribution Type: random |
+| created_date  	 | Date	   	     | 12/26/2016 to 06/26/2017 in mongoDB ISO |
+| updated_date 		 | Date	             | 06/26/2017 to 12/26/2017 in mongoDB ISO |
 
 After that you can choose amount of rows and set JSON format. Then you need to click on the button 'Download Data'.
 Further you must copy json-file to java project folder. Then you need to run following script:
@@ -110,7 +120,9 @@ public static void main(String[] args) throws IOException {
 		String updated3 = updated2.replace("\",\"type_of_room", "\"),\"type_of_room");
 		String updated4 = updated3.replace("aditional_servisces", "aditional_services");
 		String updated5 = updated4.replace("\"},\"", "\"),\"");
-		System.out.println("db.room.insertMany(" + updated5 + ")");
+		String updated6 = updated5.replace("{\"$date\":", "new Date(");
+		String updated7 = updated6.replace("}}", ")}");
+		System.out.println("db.room.insertMany(" + updated7 + ")");
 	} finally {
 		br.close();
 	}
@@ -166,15 +178,17 @@ After this action you need to copy text from eclipse console to js-file that you
 
 The next schema is 'booking'. There are such filds, its types and options:
 
-| Field Name   | Type 	          | Options |
-|--------------|------------------|---------|
-| _id	       | MongoDB ObjectID | none |
-| hotel_id     | Dataset Column   | hotel, _id, random |
-| room_id      | MongoDB ObjectID | room, _id, random |
-| user_id      | MongoDB ObjectID | none |
-| created_date | Date		  | 12/15/2017 to 12/22/2017 in mongoDB ISO |
-| updated_date | Date	   	  | 12/23/2017 to 06/31/2017 in mongoDB ISO |
-| total_price  | Number	          | min: 100, max: 25000 |
+| Field Name     | Type 	    | Options |
+|----------------|------------------|---------|
+| _id	         | MongoDB ObjectID | none |
+| hotel_id       | Dataset Column   | hotel, _id, random |
+| room_id        | MongoDB ObjectID | room, _id, random |
+| user_id        | MongoDB ObjectID | none |
+| check_in_date  | Date		    | 12/15/2017 to 12/22/2017 in mongoDB ISO |
+| check_out_date | Date	   	    | 12/23/2017 to 06/31/2017 in mongoDB ISO |
+| total_price    | Number	    | min: 100, max: 25000 |
+| created_date   | Date	   	    | 12/26/2016 to 06/26/2017 in mongoDB ISO |
+| updated_date   | Date	            | 06/26/2017 to 12/26/2017 in mongoDB ISO |
 
 After that you can choose amount of rows and set JSON format. Then you need to click on the button 'Download Data'.
 Further you must copy json-file to java project folder. Then you need to run following script:
